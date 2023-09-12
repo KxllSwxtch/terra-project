@@ -161,9 +161,105 @@
 
 		<br />
 
-		<h1>Application Page</h1>
+		<!-- MAIN -->
+		<h1 class="application__title">Terra Education Application Form</h1>
+		<div class="container">
+			<form onsubmit="submitApplicationForm()">
+				<div class="application__questionContainer">
+					<h4>1. Destination? *</h4>
+					<input
+						type="radio"
+						id="school"
+						name="school"
+						value="School (Astana, Kazakhstan)"
+						class="application__radioInput"
+					/>
+					<label for="school" class="application__label"
+						>School (Astana, Kazakhstan)</label
+					>
+					<br />
+					<input
+						type="radio"
+						id="onlineCourses"
+						name="onlineCourses"
+						value="Online Courses"
+						class="application__radioInput"
+					/>
+					<label for="onlineCourses" class="application__label"
+						>Online Courses</label
+					>
+				</div>
 
-		<!-- footer -->
+				<!-- 2 -->
+				<div class="application__questionContainer">
+					<h4>
+						2. Type of courses? (Select "Online" if you prefer to take courses
+						over the internet, or "Offline" if you prefer to attend classes in
+						person at school.)? *
+					</h4>
+					<input
+						type="radio"
+						id="offlineIndividualIntensive"
+						name="offlineIndividualIntensive"
+						value="Offline Individual Intensive Courses"
+						class="application__radioInput"
+					/>
+					<label for="offlineIndividualIntensive" class="application__label"
+						>Offline Individual Intensive Courses</label
+					>
+					<br />
+					<input
+						type="radio"
+						id="offlineGroupIntensive"
+						name="offlineGroupIntensive"
+						value="Offline Group Intensive Courses"
+						class="application__radioInput"
+					/>
+					<label for="offlineGroupIntensive" class="application__label"
+						>Offline Group Intensive Courses</label
+					>
+					<br />
+					<input
+						type="radio"
+						id="onlineIndividualIntensive"
+						name="onlineIndividualIntensive"
+						value="Online Individual Intensive Courses"
+						class="application__radioInput"
+					/>
+					<label for="onlineIndividualIntensive" class="application__label"
+						>Online Individual Intensive courses</label
+					>
+					<br />
+					<input
+						type="radio"
+						id="offlineIndividualGeneral"
+						name="offlineIndividualGeneral"
+						value="Offline Individual General Courses"
+						class="application__radioInput"
+					/>
+					<label for="offlineIndividualGeneral" class="application__label"
+						>Offline Individual General courses</label
+					>
+					<br />
+					<input
+						type="radio"
+						id="offlineGroupGeneral"
+						name="offlineGroupGeneral"
+						value="Offline Group General Courses"
+						class="application__radioInput"
+					/>
+					<label for="offlineGroupGeneral" class="application__label"
+						>Offline Group General Courses</label
+					>
+				</div>
+
+				<button id="application__submitBtn">Submit</button>
+			</form>
+		</div>
+
+		<!-- END MAIN -->
+
+		<!-- FOOTER -->
 
 		<div class="bottomnav">
 			<div class="footer">
@@ -180,6 +276,6 @@
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-		<script src="script.js"></script>
+		<script src="Application.js"></script>
 	</body>
 </html>
