@@ -160,8 +160,61 @@
 			>
 		</div>
 
-		<!-- footer -->
+		<!-- MAIN CONTENT-->
+		<div class="container">
+			<div class="pricing__titleContainer">
+				<span class="pricing__titleContainer-number">1</span>
+				<h3 class="pricing__titleContainer-title">Choose Your Course</h3>
+			</div>
 
+			<div class="pricing__courseSelectionContainer">
+				<div class="pricing__courseSelectionContainer-leftSide">
+					<div class="pricing__courseSelectionContainer-leftSide--box">
+						<label for="level">Level:</label>
+						<br />
+						<select id="level" name="level">
+							<option value="A1 - Elementary">A1 - Elementary</option>
+							<option value="A2 - Pre-Intermediate">
+								A2 - Pre-Intermediate
+							</option>
+							<option value="B1 – Intermediate">B1 – Intermediate</option>
+							<option value="B2 – Upper-Intermediate">
+								B2 – Upper-Intermediate
+							</option>
+							<option value="C1 – Advanced">C1 – Advanced</option>
+						</select>
+					</div>
+
+					<div class="pricing__courseSelectionContainer-leftSide--box">
+						<label for="courseType">Course Type:</label>
+						<br />
+						<select id="courseType" name="courseType">
+							<option value="type1">
+								Russian Standard Group Course - 20 lessons per week
+							</option>
+							<option value="type2">Type 2</option>
+							<option value="type3">Type 3</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="pricing__courseSelectionContainer-dates">
+					<!-- COURSE START PICKER -->
+					<div class="pricing__courseSelectionContainer-dates--dateContainer">
+						<label for="courseStart">Course Start:</label>
+						<input type="date" id="courseStart" name="courseStart" />
+					</div>
+
+					<!-- COURSE END PICKER -->
+					<div class="pricing__courseSelectionContainer-dates--dateContainer">
+						<label for="courseEnd">Course End:</label>
+						<input type="date" id="courseEnd" name="courseEnd" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- footer -->
 		<div class="bottomnav">
 			<div class="footer">
 				<h3 class="intouch">Get in touch with us:</h3>

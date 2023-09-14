@@ -2,6 +2,48 @@ body {
 	background-color: #eeeeee;
 }
 
+/* PRICING PAGE STYLES */
+.pricing__courseSelectionContainer-leftSide--box {
+	margin-bottom: 20px;
+}
+.pricing__courseSelectionContainer {
+	display: flex;
+}
+.pricing__courseSelectionContainer-dates {
+	display: flex;
+	margin-left: 2rem;
+}
+.pricing__courseSelectionContainer-dates--dateContainer {
+	display: flex;
+	flex-direction: column;
+	margin-right: 20px;
+}
+.pricing__courseSelectionContainer-dates--dateContainer input {
+	padding: 4px;
+}
+
+.pricing__titleContainer {
+	display: flex;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+}
+.pricing__titleContainer-number {
+	font-size: 1rem;
+	margin-right: 5px;
+	background-color: #ee5007;
+	padding: 2px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pricing__titleContainer-title {
+	font-size: 1.2rem;
+	color: black;
+}
+
 /* APPLICATION PAGE STYLES */
 .application__title {
 	text-align: center;
@@ -191,7 +233,6 @@ body {
 }
 
 .container {
-	display: flex;
 	background-color: white;
 	margin-left: 100px;
 	margin-right: 100px;
