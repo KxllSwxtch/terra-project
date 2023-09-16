@@ -160,8 +160,29 @@
 			>
 		</div>
 
-		<!-- footer -->
+		<!-- MAIN CONTENT -->
+		<div class="container">
+			<!-- NAME INPUT -->
+			<div>
+				<label for="onlineTestName">Your name:</label>
+				<input type="text" required placeholder="Enter your name" />
+			</div>
+			<!-- NAME INPUT END -->
 
+			<!-- EMAIL INPUT -->
+			<div>
+				<label for="resultsEmail">Enter Email to Receive Test Results:</label>
+				<input type="email" required />
+			</div>
+			<!-- EMAIL INPUT END -->
+
+			<!-- QUESTIONS -->
+			<div><div class="onlinetest__questions"></div></div>
+			<!-- QUESTIONS END -->
+		</div>
+		<!-- MAIN CONTENT END -->
+
+		<!-- footer -->
 		<div class="bottomnav">
 			<div class="footer">
 				<h3 class="intouch">Get in touch with us:</h3>
@@ -177,6 +198,7 @@
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+		<script src="OnlineTest.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>
