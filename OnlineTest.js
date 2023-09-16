@@ -411,7 +411,7 @@ const questions = {
 
 // display questions on the page
 const objectToHTMLWithInputs = (questionsObj) => {
-	let html = '<form>'
+	let html = '<form id="onlineTestForm">'
 
 	for (const key in questionsObj) {
 		if (questionsObj.hasOwnProperty(key)) {
@@ -423,7 +423,7 @@ const objectToHTMLWithInputs = (questionsObj) => {
 				html += `<label style="margin-bottom: -4px; display: block;" for="${questionKey}">${questionKey}</label><br/>`
 
 				for (let choice of actualQuestions[questionKey].choices) {
-					html += `<input type="radio" id="${choice}" name="${choice}" value="${choice}" />`
+					html += `<input required type="radio" id="${choice}" name="${questionKey}" value="${choice}" />`
 					html += ` <label for=${choice}>${choice}</label> <br />`
 				}
 
@@ -441,3 +441,44 @@ const objectToHTMLWithInputs = (questionsObj) => {
 // Get the container element and set its innerHTML to the HTML representation of the object
 const questionsContainer = document.querySelector('.onlinetest__questions')
 questionsContainer.innerHTML = objectToHTMLWithInputs(questions)
+
+// name and email
+const email = document.getElementById('userEmail')
+const name = document.getElementById('userName')
+
+const onlineTestForm = document.getElementById('onlineTestForm')
+let totalScore = 0
+
+// handle radio buttons click
+onlineTestForm.addEventListener('change', (event) => {
+	for (let key in questions) {
+		const level = questions[key]
+
+		for (let questionTitle in level) {
+			if (questionTitle === event.target.name) {
+				const correctAnswer = level[questionTitle].correctAnswer
+				const userAnswer = event.target.value
+
+				if (userAnswer === correctAnswer)
+					totalScore += level[questionTitle].score
+			}
+		}
+	}
+})
+
+onlineTestForm.addEventListener('submit', (event) => {
+	event.preventDefault()
+
+	// get all selected values
+	const selectedValues = []
+
+	// // Loop through the radio buttons within the form
+	// const radioButtons = onlineTestForm.querySelectorAll('input[type="radio"]')
+	// radioButtons.forEach(function (radioButton) {
+	// 	if (radioButton.checked) {
+	// 		selectedValues.push(radioButton.value)
+	// 	}
+	// })
+
+	console.log(Math.floor(totalScore))
+})
