@@ -433,7 +433,7 @@ const objectToHTMLWithInputs = (questionsObj) => {
 			html += `<br />`
 		}
 	}
-	html += '<input type="submit" value="Submit"></form>'
+	html += '<input id="submitAnswersButton" type="submit" value="Submit"></form>'
 
 	return html
 }
@@ -444,7 +444,7 @@ questionsContainer.innerHTML = objectToHTMLWithInputs(questions)
 
 // name and email
 const email = document.getElementById('userEmail')
-const name = document.getElementById('userName')
+const userName = document.getElementById('userName')
 
 const onlineTestForm = document.getElementById('onlineTestForm')
 let totalScore = 0
@@ -480,5 +480,5 @@ onlineTestForm.addEventListener('submit', (event) => {
 	// 	}
 	// })
 
-	console.log(Math.floor(totalScore))
+	console.log(email, userName, Math.floor(totalScore))
 })
