@@ -413,18 +413,55 @@ const questions = {
 const objectToHTMLWithInputs = (questionsObj) => {
 	let html = '<form id="onlineTestForm">'
 
+	// add email and name inputs
+	html += `
+		<div style="margin-bottom: 8px;">
+			<label class='onlineTestLabel' for="onlineTestName">Your name:</label>
+			<input
+				name="userName"
+				id="userName"
+				type="text"
+				required
+				placeholder="Enter your name"
+			/>
+			<br />
+		</div>
+	`
+
+	html += `
+		<label class='onlineTestLabel' for="resultsEmail">Enter Email to Receive Test Results:</label>
+		<input id="userEmail" type="email" name="email" required placeholder='Enter your email' />
+	`
+
 	for (const key in questionsObj) {
 		if (questionsObj.hasOwnProperty(key)) {
-			html += `<h4>${key}</h4>`
+			html += `<h4 class='levelTitle'>Questions for level: ${key}</h4>`
 
 			const actualQuestions = questions[key]
 
 			for (const questionKey in actualQuestions) {
-				html += `<label style="margin-bottom: -4px; display: block;" for="${questionKey}">${questionKey}</label><br/>`
+				html += `
+					<label 
+						class='onlineTestLabel'  
+						style="margin-bottom: -4px; display: block;" 
+						for="${questionKey}"
+					>
+						${questionKey}
+					</label>
+					<br/>
+				`
 
 				for (let choice of actualQuestions[questionKey].choices) {
-					html += `<input required type="radio" id="${choice}" name="${questionKey}" value="${choice}" />`
-					html += ` <label for=${choice}>${choice}</label> <br />`
+					html += `
+						<input 
+							required 
+							type="radio" 
+							id="${choice}" 
+							name="${questionKey}" 
+							value="${choice}" 
+						/>
+					`
+					html += ` <label class='onlineTestLabel' style='font-weight: 400;' for=${choice}>${choice}</label> <br />`
 				}
 
 				html += `<br /><br />`
@@ -433,7 +470,10 @@ const objectToHTMLWithInputs = (questionsObj) => {
 			html += `<br />`
 		}
 	}
-	html += '<input id="submitAnswersButton" type="submit" value="Submit"></form>'
+	html += `
+			<input id="submitAnswersButton" type="submit" value="Submit" />
+		</form>
+	`
 
 	return html
 }
@@ -442,12 +482,20 @@ const objectToHTMLWithInputs = (questionsObj) => {
 const questionsContainer = document.querySelector('.onlinetest__questions')
 questionsContainer.innerHTML = objectToHTMLWithInputs(questions)
 
-// name and email
-const email = document.getElementById('userEmail')
-const userName = document.getElementById('userName')
-
 const onlineTestForm = document.getElementById('onlineTestForm')
-let totalScore = 0
+
+// for collecting information
+let totalScore = 0,
+	userName = document.getElementById('userName'),
+	userEmail = document.getElementById('userEmail')
+
+// handle userName and userEmail changes
+userName.addEventListener('change', (event) => {
+	userName = event.target.value
+})
+userEmail.addEventListener('change', (event) => {
+	userEmail = event.target.value
+})
 
 // handle radio buttons click
 onlineTestForm.addEventListener('change', (event) => {
@@ -469,16 +517,5 @@ onlineTestForm.addEventListener('change', (event) => {
 onlineTestForm.addEventListener('submit', (event) => {
 	event.preventDefault()
 
-	// get all selected values
-	const selectedValues = []
-
-	// // Loop through the radio buttons within the form
-	// const radioButtons = onlineTestForm.querySelectorAll('input[type="radio"]')
-	// radioButtons.forEach(function (radioButton) {
-	// 	if (radioButton.checked) {
-	// 		selectedValues.push(radioButton.value)
-	// 	}
-	// })
-
-	console.log(email, userName, Math.floor(totalScore))
+	console.log(userName, userEmail, Math.floor(totalScore))
 })
