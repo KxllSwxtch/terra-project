@@ -164,13 +164,13 @@
 		<!-- MAIN -->
 		<h1 class="application__title">Terra Education Application Form</h1>
 		<div class="container">
-			<form onsubmit="submitApplicationForm()">
+			<form id="applicationForm">
 				<div class="application__questionContainer">
 					<h4>1. Destination? *</h4>
 					<input
 						type="radio"
 						id="school"
-						name="school"
+						name="Destination"
 						value="School (Astana, Kazakhstan)"
 						class="application__radioInput"
 					/>
@@ -181,7 +181,7 @@
 					<input
 						type="radio"
 						id="onlineCourses"
-						name="onlineCourses"
+						name="Destination"
 						value="Online Courses"
 						class="application__radioInput"
 					/>
@@ -200,7 +200,7 @@
 					<input
 						type="radio"
 						id="offlineIndividualIntensive"
-						name="offlineIndividualIntensive"
+						name="Type of courses"
 						value="Offline Individual Intensive Courses"
 						class="application__radioInput"
 					/>
@@ -211,7 +211,7 @@
 					<input
 						type="radio"
 						id="offlineGroupIntensive"
-						name="offlineGroupIntensive"
+						name="Type of courses"
 						value="Offline Group Intensive Courses"
 						class="application__radioInput"
 					/>
@@ -222,7 +222,7 @@
 					<input
 						type="radio"
 						id="onlineIndividualIntensive"
-						name="onlineIndividualIntensive"
+						name="Type of courses"
 						value="Online Individual Intensive Courses"
 						class="application__radioInput"
 					/>
@@ -233,7 +233,7 @@
 					<input
 						type="radio"
 						id="offlineIndividualGeneral"
-						name="offlineIndividualGeneral"
+						name="Type of courses"
 						value="Offline Individual General Courses"
 						class="application__radioInput"
 					/>
@@ -244,7 +244,7 @@
 					<input
 						type="radio"
 						id="offlineGroupGeneral"
-						name="offlineGroupGeneral"
+						name="Type of courses"
 						value="Offline Group General Courses"
 						class="application__radioInput"
 					/>
@@ -259,7 +259,7 @@
 					<input
 						type="radio"
 						id="elementary"
-						name="elementary"
+						name="Current Russian Language Skills"
 						value="A1 – Elementary"
 						class="application__radioInput"
 					/>
@@ -270,7 +270,7 @@
 					<input
 						type="radio"
 						id="preIntermediate"
-						name="preIntermediate"
+						name="Current Russian Language Skills"
 						value="A2 – Pre-Intermediate"
 						class="application__radioInput"
 					/>
@@ -281,7 +281,7 @@
 					<input
 						type="radio"
 						id="intermediate"
-						name="intermediate"
+						name="Current Russian Language Skills"
 						value="B1 – Intermediate"
 						class="application__radioInput"
 					/>
@@ -292,7 +292,7 @@
 					<input
 						type="radio"
 						id="upperIntermediate"
-						name="upperIntermediate"
+						name="Current Russian Language Skills"
 						value="B2 – Upper-Intermediate"
 						class="application__radioInput"
 					/>
@@ -303,7 +303,7 @@
 					<input
 						type="radio"
 						id="advanced"
-						name="advanced"
+						name="Current Russian Language Skills"
 						value="C1 – Advanced"
 						class="application__radioInput"
 					/>
@@ -316,7 +316,7 @@
 					<input
 						type="radio"
 						id="shortTermIntensive"
-						name="shortTermIntensive"
+						name="Duration of Courses"
 						value="Short-term Intensive course (1 month)"
 						class="application__radioInput"
 					/>
@@ -327,7 +327,7 @@
 					<input
 						type="radio"
 						id="longTermIntensive"
-						name="longTermIntensive"
+						name="Duration of Courses"
 						value="Long-term Intensive course (2 months)"
 						class="application__radioInput"
 					/>
@@ -338,7 +338,7 @@
 					<input
 						type="radio"
 						id="generalShortCourse"
-						name="generalShortCourse"
+						name="Duration of Courses"
 						value="General course (3-6 months)"
 						class="application__radioInput"
 					/>
@@ -349,7 +349,7 @@
 					<input
 						type="radio"
 						id="generalMediumCourse"
-						name="generalMediumCourse"
+						name="Duration of Courses"
 						value="General course (6-12 months)"
 						class="application__radioInput"
 					/>
@@ -360,7 +360,7 @@
 					<input
 						type="radio"
 						id="generalLongCourse"
-						name="generalLongCourse"
+						name="Duration of Courses"
 						value="General course (12 months +)"
 						class="application__radioInput"
 					/>
@@ -376,19 +376,19 @@
 						15th falls on a weekend, any course will start on the next working
 						day.) *
 					</h4>
-					<input type="text" id="startMonthInput" name="startMonth" value="" />
+					<input type="text" id="startMonthInput" name="Start Month" value="" />
 				</div>
 
 				<!-- 6 -->
 				<div class="application__questionContainer">
 					<h4>6. First name? *</h4>
-					<input type="text" id="firstNameInput" name="firstName" value="" />
+					<input type="text" id="firstNameInput" name="First Name" value="" />
 				</div>
 
 				<!-- 7 -->
 				<div class="application__questionContainer">
 					<h4>7. Last name? *</h4>
-					<input type="text" id="lastNameInput" name="lastName" value="" />
+					<input type="text" id="lastNameInput" name="Last Name" value="" />
 				</div>
 
 				<!-- 8 -->
@@ -397,7 +397,7 @@
 					<input
 						type="radio"
 						id="male"
-						name="male"
+						name="Gender"
 						value="Male"
 						class="application__radioInput"
 					/>
@@ -406,7 +406,7 @@
 					<input
 						type="radio"
 						id="female"
-						name="female"
+						name="Gender"
 						value="Female"
 						class="application__radioInput"
 					/>
@@ -415,7 +415,7 @@
 					<input
 						type="radio"
 						id="preferNotToSay"
-						name="preferNotToSay"
+						name="Gender"
 						value="Prefer not to say"
 						class="application__radioInput"
 					/>
@@ -426,7 +426,7 @@
 					<input
 						type="radio"
 						id="other"
-						name="other"
+						name="Gender"
 						value="Other"
 						class="application__radioInput"
 					/>
@@ -436,7 +436,7 @@
 				<!-- 9 -->
 				<div class="application__questionContainer">
 					<h4>9. Birth date (dd.mm.yyyy.)? *</h4>
-					<input type="text" id="birthdateInput" name="birthdate" value="" />
+					<input type="text" id="birthdateInput" name="Birth Date" value="" />
 				</div>
 
 				<!-- 10 -->
@@ -445,7 +445,7 @@
 					<input
 						type="text"
 						id="citizenshipInput"
-						name="citizenship"
+						name="Citizenship"
 						value=""
 					/>
 				</div>
@@ -456,7 +456,7 @@
 					<input
 						type="text"
 						id="permanentResidentCountryInput"
-						name="permanentResidentCountry"
+						name="Country of permanent residence"
 						value=""
 					/>
 				</div>
@@ -464,13 +464,13 @@
 				<!-- 12 -->
 				<div class="application__questionContainer">
 					<h4>12. Job place? *</h4>
-					<input type="text" id="jobPlaceInput" name="jobPlaceInput" value="" />
+					<input type="text" id="jobPlaceInput" name="Job Place" value="" />
 				</div>
 
 				<!-- 13 -->
 				<div class="application__questionContainer">
 					<h4>13. Position? *</h4>
-					<input type="text" id="positionInput" name="position" value="" />
+					<input type="text" id="positionInput" name="Job Position" value="" />
 				</div>
 
 				<!-- 14 -->
@@ -479,7 +479,7 @@
 					<input
 						type="text"
 						id="mobilePhoneInput"
-						name="mobilePhone"
+						name="Mobile Phone"
 						value=""
 					/>
 				</div>
@@ -487,7 +487,7 @@
 				<!-- 15 -->
 				<div class="application__questionContainer">
 					<h4>15. Email? *</h4>
-					<input type="email" id="emailInput" name="email" value="" required />
+					<input type="email" id="emailInput" name="Email" value="" />
 				</div>
 
 				<!-- 16 -->
@@ -496,9 +496,8 @@
 					<input
 						type="text"
 						id="nativeLanguageInput"
-						name="nativeLanguage"
+						name="Native Language"
 						value=""
-						required
 					/>
 				</div>
 
@@ -508,7 +507,7 @@
 					<input
 						type="text"
 						id="otherLanguagesInput"
-						name="otherLanguages"
+						name="Other Languages"
 						value=""
 					/>
 				</div>
@@ -519,7 +518,7 @@
 					<input
 						type="checkbox"
 						id="jobProficiencyCheckbox"
-						name="jobProficiency"
+						name="Target Proficiency"
 						value="Job Specification"
 					/>
 					<label for="jobProficiency">Job Specification</label>
@@ -527,7 +526,7 @@
 					<input
 						type="checkbox"
 						id="universityMajorCheckbox"
-						name="universityMajor"
+						name="Target Proficiency"
 						value="University Major"
 					/>
 					<label for="universityMajor">University Major</label>
@@ -535,7 +534,7 @@
 					<input
 						type="checkbox"
 						id="proficiencyExamCheckbox"
-						name="proficiencyExam"
+						name="Target Proficiency"
 						value="Proficiency Exam"
 					/>
 					<label for="proficiencyExam">Proficiency Exam</label>
@@ -543,7 +542,7 @@
 					<input
 						type="checkbox"
 						id="hobbyCheckbox"
-						name="hobby"
+						name="Target Proficiency"
 						value="Hobby"
 					/>
 					<label for="hobby">Hobby</label>
@@ -551,11 +550,11 @@
 					<input
 						type="checkbox"
 						id="hobbyCheckbox"
-						name="hobby"
+						name="Target Proficiency"
 						value="Hobby"
 					/>
 					<label for="hobby">Other: </label>
-					<input type="text" name="otherTargetProficiency" />
+					<input type="text" name="Target Proficiency" />
 				</div>
 
 				<!-- 19 -->
@@ -564,7 +563,7 @@
 					<input
 						type="checkbox"
 						id="speakingCheckbox"
-						name="speakingCheckbox"
+						name="Essential Skills"
 						value="Speaking"
 					/>
 					<label for="speakingCheckbox">Speaking</label>
@@ -572,7 +571,7 @@
 					<input
 						type="checkbox"
 						id="listeningCheckbox"
-						name="listeningCheckbox"
+						name="Essential Skills"
 						value="Listening Checkbox"
 					/>
 					<label for="universityMajor">Listening</label>
@@ -580,7 +579,7 @@
 					<input
 						type="checkbox"
 						id="writingCheckbox"
-						name="writingCheckbox"
+						name="Essential Skills"
 						value="Writing"
 					/>
 					<label for="proficiencyExam">Writing</label>
@@ -588,7 +587,7 @@
 					<input
 						type="checkbox"
 						id="readingCheckbox"
-						name="readingCheckbox"
+						name="Essential Skills"
 						value="Reading"
 					/>
 					<label for="readingCheckbox">Reading</label>
@@ -596,7 +595,7 @@
 					<input
 						type="checkbox"
 						id="translationCheckbox"
-						name="translationCheckbox"
+						name="Essential Skills"
 						value="Translation"
 					/>
 					<label for="translationCheckbox">Translation</label>
@@ -612,7 +611,7 @@
 					<textarea
 						type="text"
 						id="currentSitutationTextfield"
-						name="currentSitutationTextfield"
+						name="Special Vocabulary Requirements"
 						value=""
 						style="width: 100%; height: 50px"
 					></textarea>
@@ -626,7 +625,7 @@
 					<input
 						type="radio"
 						id="homestayBreakfast"
-						name="homestayBreakfast"
+						name="Residence Options"
 						value="Homestay + Breakfast"
 						class="application__radioInput"
 					/>
@@ -637,7 +636,7 @@
 					<input
 						type="radio"
 						id="homestayBreakfastDinner"
-						name="homestayBreakfastDinner"
+						name="Residence Options"
 						value="Homestay + Breakfast + Dinner"
 						class="application__radioInput"
 					/>
@@ -648,7 +647,7 @@
 					<input
 						type="radio"
 						id="hotelBreakfast"
-						name="hotelBreakfast"
+						name="Residence Options"
 						value="Hotel + Breakfast"
 						class="application__radioInput"
 					/>
@@ -659,14 +658,14 @@
 					<input
 						type="radio"
 						id="otherResidenceOptions"
-						name="otherResidenceOptions"
+						name="Residence Options"
 						value="Other"
 						class="application__radioInput"
 					/>
 					<label for="otherResidenceOptions" class="application__label"
 						>Other:
 					</label>
-					<input type="text" id="otherResidence" name="otherResidence" />
+					<input type="text" id="otherResidence" name="Residence Options" />
 				</div>
 
 				<!-- 22 -->
@@ -677,8 +676,7 @@
 					<input
 						type="text"
 						id="residenceStartDate"
-						name="residenceStartDate"
-						value=""
+						name="Residence Start Date"
 						class="application__radioInput"
 						style="width: 100%; height: 20px"
 					/>
@@ -690,7 +688,7 @@
 					<input
 						type="text"
 						id="residenceEndDate"
-						name="residenceEndDate"
+						name="Residence End Date"
 						value=""
 						class="application__radioInput"
 						style="width: 100%; height: 20px"
@@ -707,8 +705,7 @@
 					<input
 						type="text"
 						id="specialDietaryNeeds"
-						name="specialDietaryNeeds"
-						value=""
+						name="Special Dietary Needs"
 						class="application__radioInput"
 						style="width: 100%; height: 20px"
 					/>
@@ -723,7 +720,7 @@
 					<input
 						type="radio"
 						id="specialDietaryNeedsYes"
-						name="specialDietaryNeedsYes"
+						name="Allergies"
 						value="Yes"
 						class="application__radioInput"
 					/>
@@ -734,7 +731,7 @@
 					<input
 						type="radio"
 						id="specialDietaryNeedsNo"
-						name="specialDietaryNeedsNo"
+						name="Allergies"
 						value="No"
 						class="application__radioInput"
 					/>
@@ -752,7 +749,7 @@
 					<input
 						type="text"
 						id="specialDietaryNeedsInput"
-						name="specialDietaryNeedsInput"
+						name="Special Dietary Needs"
 						style="width: 100%; height: 20px"
 					/>
 				</div>
@@ -766,7 +763,7 @@
 					<input
 						type="radio"
 						id="canLiveWithPetsYes"
-						name="canLiveWithPetsYes"
+						name="Ability to live with pets"
 						value="Yes"
 						class="application__radioInput"
 					/>
@@ -775,7 +772,7 @@
 					<input
 						type="radio"
 						id="canLiveWithPetsNo"
-						name="canLiveWithPetsNo"
+						name="Ability to live with pets"
 						value="No"
 						class="application__radioInput"
 					/>
@@ -784,8 +781,8 @@
 					<input
 						type="radio"
 						id="canLiveWithPetsDontMind"
-						name="canLiveWithPetsDontMind"
-						value="No"
+						name="Ability to live with pets"
+						value="Don't Mind"
 						class="application__radioInput"
 					/>
 					<label for="canLiveWithPetsDontMind" class="application__label"
@@ -802,7 +799,7 @@
 					<input
 						type="radio"
 						id="familyWithChildren"
-						name="familyWithChildren"
+						name="Family Preferences"
 						value="Family with Children"
 						class="application__radioInput"
 					/>
@@ -813,7 +810,7 @@
 					<input
 						type="radio"
 						id="familyWithoutChildren"
-						name="familyWithoutChildren"
+						name="Family Preferences"
 						value="Family without Children"
 						class="application__radioInput"
 					/>
@@ -824,7 +821,7 @@
 					<input
 						type="radio"
 						id="familyDontMind"
-						name="familyDontMind"
+						name="Family Preferences"
 						value="Don't Mind"
 						class="application__radioInput"
 					/>
@@ -842,7 +839,7 @@
 					<input
 						type="radio"
 						id="smoker"
-						name="smoker"
+						name="Smoker"
 						value="Smoker"
 						class="application__radioInput"
 					/>
@@ -851,7 +848,7 @@
 					<input
 						type="radio"
 						id="nonSmoker"
-						name="nonSmoker"
+						name="Smoker"
 						value="Non-Smoker"
 						class="application__radioInput"
 					/>
@@ -867,7 +864,7 @@
 					<input
 						type="text"
 						id="specialHobbies"
-						name="specialHobbies"
+						name="Special Hobbies"
 						style="width: 100%; height: 20px"
 					/>
 				</div>
@@ -881,7 +878,7 @@
 					<input
 						type="text"
 						id="anyReasonableAdjustments"
-						name="anyReasonableAdjustments"
+						name="Reasonable Adjustments"
 						style="width: 100%; height: 20px"
 					/>
 				</div>
