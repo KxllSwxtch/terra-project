@@ -156,8 +156,9 @@
 				style="font-size: 15px"
 				class="icon"
 				onclick="myFunction()"
-				>&#9776;</a
 			>
+				&#9776;
+			</a>
 		</div>
 
 		<!-- MAIN CONTENT-->
@@ -167,9 +168,11 @@
 				<h3 class="pricing__titleContainer-title">Choose Your Course</h3>
 			</div>
 
-			<div class="pricing__courseSelectionContainer">
-				<div class="pricing__courseSelectionContainer-leftSide">
-					<div class="pricing__courseSelectionContainer-leftSide--box">
+			<div class="pricing__mainContainer">
+				<!-- MAIN FORM -->
+				<form id="pricingForm">
+					<!-- LEVEL SELECTION -->
+					<div>
 						<label for="level">Level:</label>
 						<br />
 						<select id="level" name="level">
@@ -185,30 +188,113 @@
 						</select>
 					</div>
 
-					<div class="pricing__courseSelectionContainer-leftSide--box">
-						<label for="courseType">Course Type:</label>
-						<br />
-						<select id="courseType" name="courseType">
-							<option value="type1">
-								Russian Standard Group Course - 20 lessons per week
-							</option>
-							<option value="type2">Type 2</option>
-							<option value="type3">Type 3</option>
+					<!-- ONLINE COURSES -->
+					<label for="online">Online</label>
+					<br />
+					<select name="Online" id="online">
+						<option value="default">-- Select an option --</option>
+						<option value="Individual general courses - 2 hours per week">
+							Individual general courses - 2 hours per week
+						</option>
+						<option value="Individual general course -  3 hours per week">
+							Individual general course - 3 hours per week
+						</option>
+						<option value="Individual intensive courses - 20 hours per week">
+							Individual intensive courses - 20 hours per week
+						</option>
+						<option value="Group general courses - 2 hours per week">
+							Group general courses - 2 hours per week
+						</option>
+						<option value="Group general courses - 3 hours per week">
+							Group general courses - 3 hours per week
+						</option>
+					</select>
+					<!-- ONLINE COURSES END -->
+
+					<br />
+					<br />
+
+					<!-- OFFLINE COURSES -->
+					<label for="Offline (Astana)">Offline</label>
+					<br />
+					<select name="Offline (Astana)" id="offline">
+						<option value="default">-- Select an option --</option>
+						<option value="Individual general courses – 2 hours per week">
+							Individual general courses – 2 hours per week
+						</option>
+						<option value="Individual general courses - 3 hours per week">
+							Individual general courses 3 hours per week
+						</option>
+						<option value="Individual Intensive courses – 20 hours per week">
+							Individual Intensive courses – 20 hours per week
+						</option>
+						<option value="Group general courses - 2 hours per week ">
+							Group general courses - 2 hours per week
+						</option>
+						<option value="Group general courses - 3 hours per week">
+							Group general courses - 3 hours per week
+						</option>
+						<option value="Group Intensive courses – 20 hours per week">
+							Group Intensive courses – 20 hours per week
+						</option>
+					</select>
+					<!-- OFFLINE COURSES END -->
+
+					<br />
+					<br />
+
+					<!-- COURSE START -->
+					<label for="Course Start">Course Start</label>
+					<br />
+					<span
+						>The immersion course starts on the 15th of every month. <br />
+						If the 15th falls on a weekend, the immersion course will start on
+						the next working day.</span
+					>
+					<br />
+					<input type="text" placeholder="Please Enter Start Date" />
+					<!-- COURSE START END -->
+
+					<br />
+					<br />
+
+					<!-- COURSE DURATION START -->
+					<label for="Course Duration"> Course Duration </label>
+					<br />
+					<select name="Course Duration" id="courseDuration">
+						<option value="Short-term course lasting one month">
+							Short-term course lasting one month
+						</option>
+						<option value="Long-term course lasting two months">
+							Long-term course lasting two months
+						</option>
+					</select>
+					<!-- COURSE DURATION END -->
+				</form>
+
+				<!-- CALCULATOR -->
+				<div class="pricing__calculatorContainer">
+					<div class="pricing__calculatorContainer--currency">
+						<span>Currency <span style="color: red">*</span></span>
+						<select name="Currency" id="currencySelect">
+							<option value="USD">USD</option>
+							<option value="EUR">EUR</option>
 						</select>
 					</div>
-				</div>
 
-				<div class="pricing__courseSelectionContainer-dates">
-					<!-- COURSE START PICKER -->
-					<div class="pricing__courseSelectionContainer-dates--dateContainer">
-						<label for="courseStart">Course Start:</label>
-						<input type="date" id="courseStart" name="courseStart" />
+					<div class="pricing__calculatorContainer--infoRow">
+						<span>Enrollment Fees</span>
+						<h4>
+							<span id="enrollmentFees">0</span> <span id="currency">USD</span>
+						</h4>
 					</div>
 
-					<!-- COURSE END PICKER -->
-					<div class="pricing__courseSelectionContainer-dates--dateContainer">
-						<label for="courseEnd">Course End:</label>
-						<input type="date" id="courseEnd" name="courseEnd" />
+					<div class="pricing__calculatorContainer--infoRow">
+						<span>Transfer Fees</span>
+						<h4>
+							<span id="transferFees">0</span>
+							<span id="currencyTransfer">USD</span>
+						</h4>
 					</div>
 				</div>
 			</div>
@@ -230,6 +316,6 @@
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-		<script src="script.js"></script>
+		<script src="Pricing.js"></script>
 	</body>
 </html>

@@ -35,25 +35,33 @@ body {
 }
 
 /* PRICING PAGE STYLES */
+.pricing__calculatorContainer--infoRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.pricing__calculatorContainer--currency {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+.pricing__calculatorContainer {
+	margin-left: 10%;
+	box-shadow: 0px 7px 19px -3px #000000;
+	width: 35%;
+	padding: 20px;
+	border-radius: 5px;
+}
+.pricing__mainContainer {
+	display: flex;
+}
 .pricing__courseSelectionContainer-leftSide--box {
 	margin-bottom: 20px;
 }
 .pricing__courseSelectionContainer {
 	display: flex;
 }
-.pricing__courseSelectionContainer-dates {
-	display: flex;
-	margin-left: 2rem;
-}
-.pricing__courseSelectionContainer-dates--dateContainer {
-	display: flex;
-	flex-direction: column;
-	margin-right: 20px;
-}
-.pricing__courseSelectionContainer-dates--dateContainer input {
-	padding: 4px;
-}
-
 .pricing__titleContainer {
 	display: flex;
 	align-items: center;
