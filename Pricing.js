@@ -2,23 +2,31 @@ const pricingForm = document.getElementById('pricingForm')
 const onlineSelect = document.getElementById('online')
 const offlineSelect = document.getElementById('offline')
 const currencySelect = document.getElementById('currencySelect')
+const livingSelect = document.getElementById('living')
 const enrollmentFees = document.getElementById('enrollmentFees')
 const transferFees = document.getElementById('transferFees')
 const currency = document.getElementById('currency')
 const currencyTransfer = document.getElementById('currencyTransfer')
+const additionalFees = document.getElementById('additionalFees')
+const currencyAdditional = document.getElementById('currencyAdditional')
 
 currencySelect.addEventListener('change', (event) => {
 	currency.innerHTML = event.target.value
 	currencyTransfer.innerHTML = event.target.value
+	currencyAdditional.innerHTML = event.target.value
 })
 
 // disable offline select if online selected
 onlineSelect.addEventListener('change', (event) => {
 	if (event.target.value !== 'default') {
 		offlineSelect.disabled = true
+		livingSelect.disabled = true
+
 		enrollmentFees.innerHTML = 0
+		additionalFees.innerHTML = 0
 	} else {
 		offlineSelect.disabled = false
+		livingSelect.disabled = false
 	}
 })
 
@@ -88,7 +96,7 @@ offlineSelect.addEventListener('change', (event) => {
 	}
 })
 
-// form submission
+// form change event
 pricingForm.addEventListener('change', (event) => {
 	console.log(event.target.name)
 })

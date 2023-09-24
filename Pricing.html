@@ -188,6 +188,8 @@
 						</select>
 					</div>
 
+					<br />
+
 					<!-- ONLINE COURSES -->
 					<label for="online">Online</label>
 					<br />
@@ -242,9 +244,12 @@
 
 					<br />
 					<br />
+					<br />
 
 					<!-- COURSE START -->
-					<label for="Course Start">Course Start</label>
+					<label for="Course Start" style="font-size: 1.2rem; font-weight: bold"
+						>Course Start</label
+					>
 					<br />
 					<span
 						>The immersion course starts on the 15th of every month. <br />
@@ -252,7 +257,11 @@
 						the next working day.</span
 					>
 					<br />
-					<input type="text" placeholder="Please Enter Start Date" />
+					<input
+						type="text"
+						placeholder="Please Enter Start Date"
+						class="pricing__calculatorContainer--courseStartInput"
+					/>
 					<!-- COURSE START END -->
 
 					<br />
@@ -270,6 +279,25 @@
 						</option>
 					</select>
 					<!-- COURSE DURATION END -->
+
+					<br />
+					<br />
+
+					<!-- LIVING START -->
+					<label for="Living">Living</label>
+					<br />
+					<select name="Living" id="living">
+						<option value="Homestay + (breakfast)">
+							Homestay + (breakfast)
+						</option>
+						<option value="Homestay (breakfast + dinner)">
+							Homestay (breakfast + dinner)
+						</option>
+						<option value="Hotel (breakfast included)">
+							Hotel (breakfast included)
+						</option>
+					</select>
+					<!-- LIVING END -->
 				</form>
 
 				<!-- CALCULATOR -->
@@ -296,6 +324,21 @@
 							<span id="currencyTransfer">USD</span>
 						</h4>
 					</div>
+
+					<div class="pricing__calculatorContainer--infoRow">
+						<span>Additional Fees</span>
+						<h4>
+							<span id="additionalFees">0</span>
+							<span id="currencyAdditional">USD</span>
+						</h4>
+					</div>
+
+					<!-- TOTAL PRICE -->
+					<div class="pricing__calculatorContainer--totalPrice">
+						<h1>Total Price</h1>
+						<h1>0 <span id="totalPriceCurrency">USD</span></h1>
+					</div>
+					<!-- TOTAL PRICE END -->
 				</div>
 			</div>
 		</div>

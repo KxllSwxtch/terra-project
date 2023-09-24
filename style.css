@@ -35,6 +35,50 @@ body {
 }
 
 /* PRICING PAGE STYLES */
+.pricing__calculatorContainer--courseStartInput {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 10px;
+	margin: 5px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 1.5;
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+/* Add focus styles */
+.pricing__calculatorContainer--courseStartInput:focus {
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Add hover styles */
+.pricing__calculatorContainer--courseStartInput:hover {
+	border-color: #999;
+}
+
+/* Add placeholder style */
+.pricing__calculatorContainer--courseStartInput::placeholder {
+	color: #999;
+}
+
+/* Optional: Disabled .pricing__calculatorContainer--courseStartInput style */
+.pricing__calculatorContainer--courseStartInput:disabled {
+	background-color: #f2f2f2;
+	cursor: not-allowed;
+}
+.pricing__calculatorContainer--totalPrice {
+	background-color: #006e7f;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.7rem;
+	border-radius: 5px;
+}
 .pricing__calculatorContainer--infoRow {
 	display: flex;
 	align-items: center;
