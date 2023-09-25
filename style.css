@@ -35,6 +35,13 @@ body {
 }
 
 /* PRICING PAGE STYLES */
+.pricing__calculatorContainer--totalPriceTextContainer {
+	display: flex;
+	align-items: center;
+	font-family: inherit;
+	font-size: 1rem;
+}
+
 .pricing__calculatorContainer--courseStartInput {
 	box-sizing: border-box;
 	width: 50%;

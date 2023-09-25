@@ -3,13 +3,14 @@ const onlineSelect = document.getElementById('online')
 const offlineSelect = document.getElementById('offline')
 const currencySelect = document.getElementById('currencySelect')
 const livingSelect = document.getElementById('living')
-const enrollmentFees = document.getElementById('enrollmentFees')
+const enrollmentFeesHTML = document.getElementById('enrollmentFees')
 const transferFees = document.getElementById('transferFees')
 const currency = document.getElementById('currency')
 const currencyTransfer = document.getElementById('currencyTransfer')
 const additionalFees = document.getElementById('additionalFees')
 const currencyAdditional = document.getElementById('currencyAdditional')
 const courseDurationSelect = document.getElementById('courseDuration')
+const totalPriceHTML = document.getElementById('totalPrice')
 
 currencySelect.addEventListener('change', (event) => {
 	currency.innerHTML = event.target.value
@@ -24,7 +25,7 @@ onlineSelect.addEventListener('change', (event) => {
 		offlineSelect.disabled = true
 		livingSelect.disabled = true
 
-		enrollmentFees.innerHTML = 0
+		enrollmentFeesHTML.innerHTML = 0
 		additionalFees.innerHTML = 0
 
 		// get a value from a string with course selection with the amount
@@ -51,12 +52,12 @@ offlineSelect.addEventListener('change', (event) => {
 			currencyTransfer.innerHTML = event.target.value
 
 			if (currency.innerHTML === 'USD') {
-				enrollmentFees.innerHTML = 300
+				enrollmentFeesHTML.innerHTML = 300
 				transferFees.innerHTML = 50
 				currency.innerHTML = 'USD'
 				currencyTransfer.innerHTML = 'USD'
 			} else if (currency.innerHTML === 'EUR') {
-				enrollmentFees.innerHTML = 273
+				enrollmentFeesHTML.innerHTML = 273
 				transferFees.innerHTML = 45
 				currency.innerHTML = 'EUR'
 				currencyTransfer.innerHTML = 'EUR'
@@ -64,12 +65,12 @@ offlineSelect.addEventListener('change', (event) => {
 		})
 
 		if (currency.innerHTML === 'USD') {
-			enrollmentFees.innerHTML = 300
+			enrollmentFeesHTML.innerHTML = 300
 			transferFees.innerHTML = 50
 			currency.innerHTML = 'USD'
 			currencyTransfer.innerHTML = 'USD'
 		} else if (currency.innerHTML === 'EUR') {
-			enrollmentFees.innerHTML = 273
+			enrollmentFeesHTML.innerHTML = 273
 			transferFees.innerHTML = 45
 			currency.innerHTML = 'EUR'
 			currencyTransfer.innerHTML = 'EUR'
@@ -81,12 +82,12 @@ offlineSelect.addEventListener('change', (event) => {
 			currency.innerHTML = event.target.value
 
 			if (currency.innerHTML === 'USD') {
-				enrollmentFees.innerHTML = 0
+				enrollmentFeesHTML.innerHTML = 0
 				transferFees.innerHTML = 0
 				currency.innerHTML = 'USD'
 				currencyTransfer.innerHTML = 'USD'
 			} else if (currency.innerHTML === 'EUR') {
-				enrollmentFees.innerHTML = 0
+				enrollmentFeesHTML.innerHTML = 0
 				transferFees.innerHTML = 0
 				currency.innerHTML = 'EUR'
 				currencyTransfer.innerHTML = 'EUR'
@@ -94,12 +95,12 @@ offlineSelect.addEventListener('change', (event) => {
 		})
 
 		if (currency.innerHTML === 'USD') {
-			enrollmentFees.innerHTML = 0
+			enrollmentFeesHTML.innerHTML = 0
 			transferFees.innerHTML = 0
 			currency.innerHTML = 'USD'
 			currencyTransfer.innerHTML = 'USD'
 		} else if (currency.innerHTML === 'EUR') {
-			enrollmentFees.innerHTML = 0
+			enrollmentFeesHTML.innerHTML = 0
 			transferFees.innerHTML = 0
 			currency.innerHTML = 'EUR'
 			currencyTransfer.innerHTML = 'EUR'
@@ -107,7 +108,8 @@ offlineSelect.addEventListener('change', (event) => {
 	}
 })
 
-let totalCourseHours = 0
+let totalCourseHours = 0,
+	totalPrice = 0
 courseDurationSelect.addEventListener('change', (event) => {
 	const value = event.target.value
 
@@ -121,4 +123,8 @@ courseDurationSelect.addEventListener('change', (event) => {
 })
 
 // form change event
-pricingForm.addEventListener('change', (event) => {})
+pricingForm.addEventListener('change', (event) => {
+	// totalPrice = totalCourseHours + enrollmentFeesHTML + additionalFees
+	console.log(totalPrice)
+	totalPriceHTML.innerHTML = totalPrice
+})
