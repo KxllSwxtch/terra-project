@@ -12,6 +12,7 @@ const currencyAdditional = document.getElementById('currencyAdditional')
 const courseDurationSelect = document.getElementById('courseDuration')
 const totalPriceHTML = document.getElementById('totalPrice')
 const totalPriceCurrency = document.getElementById('totalPriceCurrency')
+const calculateButton = document.getElementById('calculateButton')
 
 // variables need for calculations
 let totalPrice = 0,
@@ -153,6 +154,12 @@ courseDurationSelect.addEventListener('change', (event) => {
 	}
 })
 
+calculateButton.addEventListener('click', (event) => {
+	event.preventDefault()
+
+	calculateTotalPrice()
+})
+
 // form change event
 pricingForm.addEventListener('change', (event) => {
 	calculateTotalPrice()
@@ -164,6 +171,8 @@ function calculateTotalPrice() {
 
 	totalPrice =
 		totalCourseHours * currentCurrencyHourRate + enrollmentFees + additionalFees
+
+	totalPriceHTML.innerHTML = totalPrice
 
 	return totalPrice
 }
