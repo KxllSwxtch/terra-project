@@ -163,10 +163,10 @@
 
 		<!-- MAIN CONTENT-->
 		<div class="container">
-			<div class="pricing__titleContainer">
+			<!-- <div class="pricing__titleContainer">
 				<span class="pricing__titleContainer-number">1</span>
 				<h3 class="pricing__titleContainer-title">Choose Your Course</h3>
-			</div>
+			</div> -->
 
 			<div class="pricing__mainContainer">
 				<!-- MAIN FORM -->
@@ -175,7 +175,7 @@
 					<div>
 						<label for="level">Level:</label>
 						<br />
-						<select id="level" name="level">
+						<select id="level" name="level" required>
 							<option value="A1 - Elementary">A1 - Elementary</option>
 							<option value="A2 - Pre-Intermediate">
 								A2 - Pre-Intermediate
@@ -193,7 +193,7 @@
 					<!-- ONLINE COURSES -->
 					<label for="online">Online</label>
 					<br />
-					<select name="Online" id="online">
+					<select name="Online" id="online" required>
 						<option value="default">-- Select an option --</option>
 						<option value="Individual general courses - 2 hours per week">
 							Individual general courses - 2 hours per week
@@ -219,7 +219,7 @@
 					<!-- OFFLINE COURSES -->
 					<label for="Offline (Astana)">Offline</label>
 					<br />
-					<select name="Offline (Astana)" id="offline">
+					<select name="Offline (Astana)" id="offline" required>
 						<option value="default">-- Select an option --</option>
 						<option value="Individual general courses – 2 hours per week">
 							Individual general courses – 2 hours per week
@@ -258,6 +258,7 @@
 					>
 					<br />
 					<input
+						required
 						type="text"
 						placeholder="Please Enter Start Date"
 						class="pricing__calculatorContainer--courseStartInput"
@@ -270,7 +271,7 @@
 					<!-- COURSE DURATION START -->
 					<label for="Course Duration">Course Duration</label>
 					<br />
-					<select name="Course Duration" id="courseDuration">
+					<select name="Course Duration" id="courseDuration" required>
 						<option value="Short-term course lasting one month" selected>
 							Short-term course lasting one month
 						</option>
@@ -286,7 +287,7 @@
 					<!-- LIVING START -->
 					<label for="Living">Living</label>
 					<br />
-					<select name="Living" id="living">
+					<select name="Living" id="living" required>
 						<option value="Homestay + (breakfast)">
 							Homestay + (breakfast)
 						</option>
@@ -298,6 +299,12 @@
 						</option>
 					</select>
 					<!-- LIVING END -->
+
+					<br />
+					<br />
+					<button class="pricing__calculatorContainer--calculateButton">
+						Calculate
+					</button>
 				</form>
 
 				<!-- CALCULATOR -->
