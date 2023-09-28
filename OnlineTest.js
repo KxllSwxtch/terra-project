@@ -486,14 +486,16 @@ const onlineTestForm = document.getElementById('onlineTestForm')
 
 // for collecting information
 let totalScore = 0,
-	userName = document.getElementById('userName'),
-	userEmail = document.getElementById('userEmail')
+	userNameInput = document.getElementById('userName'),
+	userEmailInput = document.getElementById('userEmail'),
+	userName = '',
+	userEmail = ''
 
 // handle userName and userEmail changes
-userName.addEventListener('change', (event) => {
+userNameInput.addEventListener('change', (event) => {
 	userName = event.target.value
 })
-userEmail.addEventListener('change', (event) => {
+userEmailInput.addEventListener('change', (event) => {
 	userEmail = event.target.value
 })
 
@@ -518,4 +520,68 @@ onlineTestForm.addEventListener('submit', (event) => {
 	event.preventDefault()
 
 	console.log(userName, userEmail, Math.floor(totalScore))
+
+	const a1Level = totalScore >= 0 && totalScore <= 10
+	const a2Level = totalScore >= 10.1 && totalScore <= 39
+	const b1Level = totalScore >= 39.1 && totalScore <= 60.6
+	const b2Level = totalScore >= 60.7 && totalScore <= 76
+	const c1Level = totalScore >= 76.1 && totalScore <= 82.8
+
+	const levelText = a1Level
+		? 'Based on your results we recommend courses and activities at A1 Russian level (elementary)'
+		: a2Level
+		? 'Based on your results we recommend courses and activities at A2 Russian level (pre-intermediate)'
+		: b1Level
+		? 'Based on your results we recommend courses and activities at B1 Russian level (intermediate)'
+		: b2Level
+		? 'Based on your results we recommend courses and activities at B1 Russian level (intermediate)'
+		: 'Based on your results we recommend courses and activities at C1 Russian level (advanced)'
+
+	window.alert(
+		`Your score is: ${Math.floor(
+			totalScore
+		)}. \n\n${levelText}. \n\nThe Copy of the test and result will be sent to your email.`
+	)
+
+	const emailText = `
+Online Test Results for ${userName}.
+Total Score: ${Math.floor(totalScore)}.
+${levelText}
+`
+
+	// send test to email using sendgrid
+	const apiURL = 'https://api.sendgrid.com/v3/mail/send'
+	const emailData = {
+		personalizations: [
+			{
+				to: [{ email: userEmail }],
+				subject: 'Test Results',
+			},
+		],
+		from: { email: 'dmitriy.programmer.io@gmail.com' },
+		content: [
+			{
+				type: 'text/plain',
+				value: emailText,
+			},
+		],
+	}
+
+	fetch(apiURL, {
+		method: 'POST',
+		headers: {
+			Authorization:
+				'BEARER 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',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(emailData),
+	})
+		.then((response) => {
+			if (response.ok) {
+				alert('Test Results Have Been Submitted!')
+			} else {
+				alert('Error Submitting Results')
+			}
+		})
+		.catch((error) => console.error(`Error sending results: ${error}`))
 })

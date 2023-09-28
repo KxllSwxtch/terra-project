@@ -107,7 +107,7 @@ Application for ${name},
 		method: 'POST',
 		headers: {
 			Authorization:
-				'BEARER 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',
+				'BEARER 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',
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify(emailData),
